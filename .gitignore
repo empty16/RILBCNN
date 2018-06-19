@@ -1,0 +1,14 @@
+#python
+*.so
+*.egg
+*.egg-info
+dist
+build
+
+#My configuration
+ORN.torch
+logs
+pretrained
+.idea
+backup
+*.t7
