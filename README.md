@@ -6,6 +6,59 @@ Although CNNs are unprecedentedly powerful to learn effective representations, t
 
 RI-LBCNN appeared in 2017 ICCV Workshop.
 
+## Torch Implementation
+The [torch branch](https://github.com/empty16/RILBCNN.git) contains:
+
+* the official **torch** implementation of RILBCNN.
+* the **MNIST-Variants** demo.
+
+Please follow the instruction below to install it and run the experiment demo.
+
+### Prerequisites
+* Linux (tested on ubuntu 14.04LTS)
+* NVIDIA GPU + CUDA CuDNN (CPU mode and CUDA without CuDNN mode are also available but significantly slower)
+* [Torch7](http://torch.ch/docs/getting-started.html)
+
+### Getting started
+You can do it manually in case something goes wrong:
+
+1. install the dependencies (required by the demo code):
+    * [torchnet](https://github.com/torchnet/torchnet): `luarocks install torchnet`
+    * [optnet](https://github.com/fmassa/optimize-net): `luarocks install optnet`
+
+2. clone the master branch: 
+
+    ```bash
+    # git version must be greater than 1.9.10
+    git clone https://github.com/empty16/RILBCNN.git
+    cd RILBCNN
+    export DIR=$(pwd)
+    ```
+
+3. install RILBCNN: 
+
+    ```bash
+    cd $DIR/install
+    # install the CPU/GPU/CuDNN version RILBCNN.
+    bash install.sh
+    ```
+
+4. unzip the MNIST dataset:
+
+    ```bash
+    cd $DIR/demo/datasets
+    unzip MNIST
+    ```
+
+5. run the MNIST-Variants demo:
+
+    ```bash
+    cd $DIR/demo
+    # you can modify the script to test different hyper-parameters
+    bash ./scripts/Train_MNIST.sh
+    ```
+
+
 ## Citation
 If you use the code in your research, please cite:
 ```bibtex
